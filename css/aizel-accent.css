@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Aizel-Accent';
+  src: url('../fonts/Aizel-Accent.eot');
+  src: url('../fonts/Aizel-Accent.woff2') format('woff2'),
+       url('../fonts/Aizel-Accent.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AizelAccent.woff') format('woff'),
+       url('../fonts/AizelAccent.ttf') format('truetype'),
+       url('../fonts/AizelAccent.svg#AizelAccent') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aizel-Accent';
+  src: url('../fonts/Aizel-Accent-Italic.eot');
+  src: url('../fonts/Aizel-Accent-Italic.woff2') format('woff2'),
+       url('../fonts/Aizel-Accent-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AizelAccent-Italic.woff') format('woff'),
+       url('../fonts/AizelAccent-Italic.ttf') format('truetype'),
+       url('../fonts/AizelAccent-Italic.svg#AizelAccent-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+} 

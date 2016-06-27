@@ -1,0 +1,217 @@
+<div id="main" class="glina-page">
+    <div class="row">
+        <div id="bl1" class="col-md-12 top-content-bl" style='background: url("<?php echo $this->product->head_img; ?>")'>
+            <div class="container">
+                    <?php if($this->product->title){ ?>
+                        <div class="big-text"><?php echo $this->product->title; ?>
+                    <?php } ?>
+                            <?php if($this->product->description){ ?>
+                                <div class="text left-bord"><?php echo $this->product->description; ?></div>
+                            <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="bl1" class="col-md-12 breadcrump-bl">
+            <div class="container">
+                <?php echo  $this->breadcrumb('product');?>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="bl1" class="col-md-12 main-bl-1">
+            <div class="container">
+                <div class="pull-right col-md-5 col-sm-5"><img alt="<?php echo $this->product->alt2; ?>" src="<?php echo $this->product->image1; ?>" /></div>
+                <div class="pull-left col-md-7 col-sm-7">
+                    <?php if($this->product->title1){ ?>
+                        <h2 class="title-block"><?php echo $this->product->title1; ?></h2>
+                    <?php } ?>
+                    <?php if($this->product->halftitle1){ ?>
+                        <div class="text upper"><?php echo $this->product->halftitle1; ?></div>
+                    <?php } ?>
+                    <?php if($this->lists){ ?>
+                        <?php foreach ($this->lists as $list): ?>
+                            <h5 class="pr-title"><span class="kub_green"></span> <?php echo $list; ?></h5>
+                        <?php endforeach; ?>
+                    <?php } ?>
+                    <?php if($this->product->description1){ ?>
+                        <div class="text pr-descr"><?php echo $this->product->description1; ?></div>
+                    <?php } ?>
+                    <?php if($this->product->html_block1){ ?>
+                        <?php echo $this->product->html_block1; ?>
+                    <?php } ?>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <?php if($this->product->title2){ ?>
+    <div class="row">
+        <div id="bl2" class="col-md-12 main-bl-2">
+            <div class="container">
+                <?php if($this->product->title2){ ?>
+                    <h2 class="title-block"><?php echo $this->product->title2; ?></h2>
+                <?php } ?>
+                <div class="pull-left col-md-4 col-sm-4"><a href="#" class="big-icon-pdf"><img alt="<?php echo $this->product->alt3; ?>" src="<?php echo $this->product->image2; ?>" /></a></div>
+                <div class="pull-right col-md-8 col-sm-8">
+                    <?php if($this->product->halftitle2){ ?>
+                        <h3 class="pr-title"><?php echo $this->product->halftitle2; ?></h3>
+                    <?php } ?>
+                    <?php if($this->product->description2){ ?>
+                        <div class="text"><?php echo $this->product->description2; ?></div>
+                    <?php } ?>
+                    <?php if($this->product->html_block2){ ?>
+                        <?php echo $this->product->html_block2; ?>
+                    <?php } ?>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+    <div class="row">
+        <div id="bl3" class="col-md-12 main-bl-3">
+            <div class="container">
+                <?php if($this->product->title3){ ?>
+                    <h2 class="title-block"><?php echo $this->product->title3; ?></h2>
+                <?php } ?>
+                <?php if($this->product->halftitle3){ ?>
+                    <h3 class="pr-title"><?php echo $this->product->halftitle3; ?></h3>
+                <?php } ?>
+                <?php if($this->product->html_block3){ ?>
+                    <?php echo $this->product->html_block3; ?>
+                <?php } ?>
+                <?php if($this->product->description3){ ?>
+                    <div class="text"><?php echo $this->product->description3; ?></div>
+                <?php } ?>
+                <div class="interact-map"><img src="/front/images/interact_map.png" /></div>
+            </div>
+        </div>
+    </div>
+    <?php if($this->slider) { ?>
+        <?php $backround = $this->slider[0]->head_img ? "background: url('". $this->slider[0]->head_img."')" : "";?>
+        <div class="row">
+            <div id="bl4" class="col-md-12 main-bl-4" style="<?php echo $backround; ?>">
+                <div class="container">
+                    <h2 class="title-block"><?php echo $this->slider[0]->name;?></h2>
+                    <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+
+                            <?php for ($i = 0; $i< count($this->slider); $i++){ if($i==0) $active = 'active'; else $active = '';  ?>
+                                <li data-target="#carousel-example-generic1" data-slide-to="<?php echo $i; ?>" class="<?php echo $active; ?>"></li>
+                            <?php } ?>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <?php $i=0; foreach ($this->slider as $slider): if($i==0) $active = 'active'; else $active = ''; ?>
+                            <div class="item <?php echo $active; ?>">
+                                <div class="carousel-caption">
+                                    <?php if($slider->title2){?>
+                                        <h4 class="title"><?php echo $slider->title2; ?></h4>
+                                    <?php } ?>
+                                    <?php if($slider->text){?>
+                                        <div class="text">
+                                            <?php echo $slider->text; ?>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                                <?php $i++; endforeach; ?>
+                        </div>
+                    </div> <!-- Carousel -->
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if($this->product->companies && $this->product->comp_view) { ?>
+    <div class="row">
+        <div id="bl5" class="col-md-12 main-bl-5">
+            <div class="container">
+                <div class="partners">
+                    <ul class="nav nav-tabs">
+                        <?php for ($i = 0; $i< count($this->product->companies); $i++){ if($i==0) $active = 'active'; else $active = '';  ?>
+                            <li class="<?php echo $active; ?>"><a href="#prod<?php echo $this->product->companies[$i]->id; ?>" data-toggle="tab"><img class="active" src="<?php echo $this->product->companies[$i]->image1; ?>" /><img src="<?php echo $this->product->companies[$i]->image2; ?>" /><span class="triangle_down_icon"></span></a></li>
+                        <?php } ?>
+                    </ul>
+                    <div class="tabbable">
+                        <div class="tab-content">
+                            <?php $i=0;  foreach ($this->product->companies as $cmp){ if($i==0) $active = 'active'; else $active = '';  ?>
+                            <div class="tab-pane <?php echo $active; ?>" id="prod<?php echo $cmp->id; ?>">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <?php if($cmp->title){?>
+                                            <h3 class="title-block"><?php echo $cmp->title; ?></h3>
+                                        <?php } ?>
+                                        <?php if($cmp->description){?>
+                                            <?php echo $cmp->description; ?>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <button type="button" class="actsioners-toggle" data-toggle="collapse" data-target="#actsioners-collapse-<?php echo $i; ?>"><span class="fa fa-group"></span> Информация для акционеров: <span class="pull-right fa fa-angle-down"></span><span class="pull-right fa fa-angle-up"></span></button>
+                                <div id="actsioners-collapse-<?php echo $i; ?>" class="collapse in actsioners-collapse">
+                                    <div class="all-info">
+                                        <h4 class="title">Общая информация:</h4>
+                                        <table>
+                                            <tr>
+                                                <td><a href="#">Уведомление о проведении общих сборов акционеров, которые будут проведены 28 марта 2014 года</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="all-info">
+                                        <h4 class="title">Дополнительная информация:</h4>
+                                        <table>
+                                            <tr>
+                                                <td><a href="#">Уведомление о проведении общих сборов акционеров, которые будут проведены 28 марта 2014 года</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="finance-info">
+                                        <h4 class="title">Финансовая отчётность:</h4>
+                                        <table>
+                                            <tr>
+                                                <td><a href="#">Годовая информация эмитента за 2014 год</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Годовая информация эмитента за 2013 год</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Годовая информация эмитента за 2012 год</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Годовая информация эмитента за 2011 год</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Аудит за 2010 год</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Финансовые результаты за 2010 год</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Корпоративное управление</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Деятельность предприятия</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Наблюдательный совет</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Эмитирование ценных бумаг за 2010г</a></td><td><a class="btn btn-default btn-plus" href="#"><span class="fa fa-file-pdf-o"></span> Скачать PDF</a></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php $i++; } ?>
+                        </div>
+                    </div> <!-- /tabbable -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+</div><!--/main-->
